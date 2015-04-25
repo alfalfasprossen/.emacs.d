@@ -36,7 +36,7 @@ ARCHIVE is the string name of the package archive.")
 
 ;;; Standard package repositories
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
