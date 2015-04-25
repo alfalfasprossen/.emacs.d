@@ -158,7 +158,7 @@
 
 ;;; ----------------------------------------------------------------------------
 ;;; --- PYTHON ---
-(load-file "~/.emacs.d/lisp/emacs-for-python/epy-init.el")
+;;(load-file "~/.emacs.d/lisp/emacs-for-python/epy-init.el")
 ;;(epy-setup-checker "pyflakes %f")
 ;;(global-hl-line-mode t) ;; line highligh
 ;;(set-face-background 'hl-line "black")
