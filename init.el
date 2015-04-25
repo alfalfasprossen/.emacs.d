@@ -6,6 +6,7 @@
 ;; inside my own init files
 (setq package-enable-at-startup nil)
 (load "init_elpa.el")
+(load "init_packages.el")
 
 ;; initialize my keyboard settings before trying something stupid
 (load "init_keyboard") ; so if something fails, i still have MY KEYBOARD SETTINGS!!!
