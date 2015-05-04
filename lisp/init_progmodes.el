@@ -62,7 +62,7 @@
    (local-set-key [S-return] 'maxscript-send-line-or-region)
    (local-set-key (kbd "C-e") 'maxscript-send-file)
    (local-set-key (kbd "C-c C-c") 'maxscript-send-buffer)
-   (local-set-key (kbd "C-c C-d") 'maxscript-clear-listener)))
+   (local-set-key (kbd "C-c C-d") 'maxscript-clear-output)))
 (add-hook 'maxscript-mode-hook 'set-newline-and-indent)
 
 ;;; --- END Maxscript setup ---
