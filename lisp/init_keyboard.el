@@ -69,7 +69,7 @@
 (global-set-key [(meta ?m)] 'highlight-symbol-at-point)
 (global-set-key [(meta shift ?m)] 'highlight-symbol-next)
 
-(global-set-key (kbd "C-8") 'highlight-80+-mode)
+(global-set-key (kbd "C-8") 'whitespace-mode)
 (global-set-key (kbd "C-9") 'sr-speedbar-toggle)
 
 
