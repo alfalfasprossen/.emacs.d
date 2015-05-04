@@ -32,3 +32,4 @@
 (require-package 'sr-speedbar)
 ;(require-package 'tabbar)
 ;(require-package 'yafolding)
+(require-package 'fill-column-indicator)
