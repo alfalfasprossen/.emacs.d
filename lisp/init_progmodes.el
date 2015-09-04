@@ -26,6 +26,12 @@
 (autoload 'mma-mode "mma.el" "Mathematica package file mode" t)
 (autoload 'rsl-mode "rsl-mode" "RenderMan Shading Language editing mode" t)
 (autoload 'rib-mode "rib-mode" "RenderMan Interface Bytestream editing mode" t)
+
+;; use other python mode
+(setq py-install-directory "~/.emacs.d/lisp/python-mode.el-6.2.0/")
+(add-to-list 'load-path py-install-directory)
+(require 'python-mode)
+
 ;; Load specific file extensions with a appropriate mode
 (setq auto-mode-alist
      (append '(("\\.cs$" . c++-mode)
@@ -62,8 +68,21 @@
    (local-set-key [S-return] 'maxscript-send-line-or-region)
    (local-set-key (kbd "C-e") 'maxscript-send-file)
    (local-set-key (kbd "C-c C-c") 'maxscript-send-buffer)
-   (local-set-key (kbd "C-c C-d") 'maxscript-clear-output)))
+   (local-set-key (kbd "C-c C-d") 'maxscript-clear-output)
+   (fci-mode)
+   (whitespace-mode)
+   (require 'smart-dash)
+   (smart-dash-mode)))
 (add-hook 'maxscript-mode-hook 'set-newline-and-indent)
+;; max-python stuff
+(add-hook
+ 'python-mode-hook
+ (lambda ()
+   (require 'send-to-max)
+   (local-set-key [S-return] 'maxscript-send-line-or-region-py)
+   (local-set-key (kbd "C-e") 'maxscript-send-file)))
+
+
 
 ;;; --- END Maxscript setup ---
 ;;; ----------------------------------------------------------------------------
@@ -151,7 +170,9 @@
 	    (setq indent-tabs-mode t) ; indent with tabs, not spaces
 	    (setq tab-width 4) ; a tab is 4 spaces wide
 	    (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
-	    (hideshowvis-enable)))
+	    (hideshowvis-enable)
+	    (fci-mode)
+	    (whitespace-mode)))
 
 ;;; --- END C++ / C-modes setup ---
 ;;; ----------------------------------------------------------------------------
@@ -170,8 +191,15 @@
 	    (highlight-indentation-mode t)
 	    (highlight-parentheses-mode t)
 	    (hideshowvis-enable)
-	    (define-key python-mode-map (kbd "M->") 'python-indent-shift-right)
-	    (define-key python-mode-map (kbd "M-<") 'python-indent-shift-left)))
+	    ;;(define-key python-mode-map (kbd "M->") 'python-indent-shift-right)
+	    ;;(define-key python-mode-map (kbd "M-<") 'python-indent-shift-left)
+	    (define-key python-mode-map (kbd "M->") 'py-shift-right)
+	    (define-key python-mode-map (kbd "M-<") 'py-shift-left)
+	    (fci-mode t)
+	    (whitespace-mode t)
+	    (visual-line-mode nil)
+	    (require 'smart-dash)
+	    (smart-dash-mode)))
 (setq jedi:setup-keys t)                      ; optional
 (setq jedi:complete-on-dot t)                 ; optional
 

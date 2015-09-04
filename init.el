@@ -14,6 +14,7 @@
 (load "init_mac") ; mac specific
 (load "init_settings") ; lots of general settings 
 (load "init_window") ; visual appearance
+(load "init_windows")
 (load "init_progmodes") ;
 
 
@@ -136,6 +137,9 @@
 (load custom-file)
 
 (load "init_keyboard") ; and now make sure no keys have been overriden by some packages
+(ido-mode 1)
+(setq ido-enable-flex-matching 1)
+(company-quickhelp-mode 0)
 
 
 

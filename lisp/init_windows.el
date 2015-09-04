@@ -7,3 +7,5 @@
 )
 (unless (server-running-p)
   (server-start))
+
+(set-default-font "Lucida Console 12")

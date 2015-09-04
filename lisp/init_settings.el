@@ -147,7 +147,7 @@
 ;; ----------------------------------------------------------------------------
 
 ;; Make whitespace-mode with very basic background coloring for whitespaces
-(setq whitespace-style (quote ( face lines-tail trailing indentation )))
+(setq whitespace-style (quote ( face lines-tail trailing)))
 (setq whitespace-line-column 79)
 
 ;; Make whitespace-mode and whitespace-newline-mode use “¶” for end of line char and ▷ for tab.
