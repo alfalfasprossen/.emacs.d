@@ -31,3 +31,8 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1)))
 (setq scroll-step 1)
+
+;; prevent emacs from splitting windows automatically on high-res
+;; screens. reuse the default vertical split instead
+(setq split-height-threshold 1200)
+(setq split-width-threshold 2000)
