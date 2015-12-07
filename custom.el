@@ -4,6 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.40")
+ '(ecb-source-file-regexps
+   (quote
+    ((".*"
+      ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
+      ("^\\.\\(emacs\\|gnus\\)$")))))
  '(markdown-command "gfm")
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org"))))
 (custom-set-faces
