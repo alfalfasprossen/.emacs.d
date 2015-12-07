@@ -34,5 +34,5 @@
 
 ;; prevent emacs from splitting windows automatically on high-res
 ;; screens. reuse the default vertical split instead
-(setq split-height-threshold 1200)
-(setq split-width-threshold 2000)
+(setq split-height-threshold 2200)
+(setq split-width-threshold 600)
