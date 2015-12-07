@@ -105,3 +105,5 @@
 (global-set-key (kbd "C-M-u")'sp-backward-sexp)
 
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
+
+(global-set-key (kbd "C-l") 'toggle-truncate-lines)
