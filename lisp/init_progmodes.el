@@ -144,8 +144,8 @@
 ;; - COMPANY (alternative to AC)
 (require 'company)
 (setq company-dabbrev-ignore-case t)
-(require 'company-quickhelp)
-(company-quickhelp-mode)
+;(require 'company-quickhelp)
+;(company-quickhelp-mode)
 ;; (unless cmode-use-ac
 ;;   (add-hook 'c-mode-common-hook
 ;; 	    (lambda () 
