@@ -47,13 +47,33 @@
                ("\\.lhs$" . literate-haskell-mode)
                ;("\\.m$" . mma-mode)
                ("\\.org$" . org-mode)
-               ("\\.py$" . python-mode))
+               ("\\.py$" . python-mode)
+	       ("\\.h$" . c++-mode))
              auto-mode-alist))
 
 ;; automatic camelCase or snake_case when typing word-word
 ;(require 'electric-case)
 (global-visual-line-mode t)
 (require 'highlight-indentation) ;; indentation highlight
+
+;;; --- nxml mode outline folding ---
+(require 'hideshow)
+(require 'sgml-mode)
+(require 'nxml-mode)
+
+(add-to-list 'hs-special-modes-alist
+             '(nxml-mode
+               "<!--\\|<[^/>]*[^/]>"
+               "-->\\|</[^/>]*[^/]>"
+
+               "<!--"
+               sgml-skip-tag-forward
+               nil))
+(add-hook 'nxml-mode-hook
+	  (lambda ()
+	    (hs-minor-mode)
+	    (hideshowvis-enable)))
+
 
 ;;; ----------------------------------------------------------------------------
 ;;; --- Maxscript mode for 3DsMax ---
