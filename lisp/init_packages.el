@@ -8,6 +8,7 @@
 (require-package 'cl-lib)
 (require-package 'color-theme)
 (require-package 'company)
+(require-package 'csharp-mode)
 ;; (require-package 'company-quickhelp)
 ;; (require-package 'direx)
 (require-package 'diff-hl)

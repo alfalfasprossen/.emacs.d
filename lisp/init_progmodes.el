@@ -34,7 +34,7 @@
 
 ;; Load specific file extensions with a appropriate mode
 (setq auto-mode-alist
-     (append '(("\\.cs$" . c++-mode)
+     (append '(("\\.cs$" . csharp-mode)
                ("\\.cg$" . cg-mode)
                ("\\.hlsl$" . cg-mode)
                ("\\.fxh?$" . cg-mode)
@@ -48,12 +48,13 @@
                ;("\\.m$" . mma-mode)
                ("\\.org$" . org-mode)
                ("\\.py$" . python-mode)
-	       ("\\.h$" . c++-mode))
+	       ("\\.h$" . c++-mode)
+	       ("\\.inl$" . c++-mode))
              auto-mode-alist))
 
 ;; automatic camelCase or snake_case when typing word-word
 ;(require 'electric-case)
-(global-visual-line-mode t)
+;;(global-visual-line-mode t)
 (require 'highlight-indentation) ;; indentation highlight
 
 ;;; --- nxml mode outline folding ---
@@ -192,7 +193,11 @@
 	    (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 	    (hideshowvis-enable)
 	    (fci-mode)
-	    (whitespace-mode)))
+	    (whitespace-mode)
+	    (setq truncate-lines t)))
+(add-hook 'csharp-mode-hook
+	  (lambda ()
+	    (setq c-basic-offset 4)))
 
 ;;; --- END C++ / C-modes setup ---
 ;;; ----------------------------------------------------------------------------
