@@ -9,7 +9,7 @@
     ((".*"
       ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
       ("^\\.\\(emacs\\|gnus\\)$")))))
- '(markdown-command "gfm")
+ '(markdown-command "grip")
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

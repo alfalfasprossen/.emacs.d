@@ -36,3 +36,5 @@
 ;; screens. reuse the default vertical split instead
 (setq split-height-threshold 2200)
 (setq split-width-threshold 600)
+
+(column-number-mode 1)

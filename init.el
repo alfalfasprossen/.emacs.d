@@ -206,3 +206,5 @@
 
 
 
+;; disable git as it slows down emacs extremely
+(setq vc-handled-backends ())

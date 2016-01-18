@@ -202,12 +202,27 @@
 ;;; --- END C++ / C-modes setup ---
 ;;; ----------------------------------------------------------------------------
 
+
 ;;; ----------------------------------------------------------------------------
 ;;; --- PYTHON ---
 ;;(load-file "~/.emacs.d/lisp/emacs-for-python/epy-init.el")
 ;;(epy-setup-checker "pyflakes %f")
 ;;(global-hl-line-mode t) ;; line highligh
 ;;(set-face-background 'hl-line "black")
+
+;; Python flymake configuration
+
+;; (when (load "flymake" t)
+;;   (defun flymake-pycheckers-init ()
+;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;; 		       'flymake-create-temp-inplace))
+;; 	   (local-file (file-relative-name
+;; 			temp-file
+;; 			(file-name-directory buffer-file-name))))
+;;       (list "pycheckers.bat"  (list local-file))))
+
+;;   (add-to-list 'flymake-allowed-file-name-masks
+;; 	       '("\\.py\\'" flymake-pycheckers-init)))
 
 ;; jedi python mode stuff
 (add-hook 'python-mode-hook 
@@ -222,6 +237,10 @@
 	    (define-key python-mode-map (kbd "M-<") 'py-shift-left)
 	    (fci-mode t)
 	    (whitespace-mode t)
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+	    ;;(flymake-mode)
+	    ;;(flymake-python-pyflakes-load)
+	    (flycheck-mode)
 	    (visual-line-mode nil)
 	    (require 'smart-dash)
 	    (smart-dash-mode)))
@@ -312,3 +331,4 @@
 ;; Markdown mode
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+(global-magit-file-mode t)
