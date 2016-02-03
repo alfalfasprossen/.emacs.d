@@ -20,7 +20,7 @@
 ;; For htmlize.el.
 ;; Rationale: use unicode whenever possible, since it's widely supported today.
 (setq htmlize-convert-nonascii-to-entities nil) ; make htmlize generate unicode directly instead of html entities
-(setq htmlize-html-charset "utf-8") ; make the output html use utf-8 charset 
+(setq htmlize-html-charset "utf-8") ; make the output html use utf-8 charset
 
 ;; ----------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@
 (defun desktop-settings-setup ()
   "Some settings setup for desktop-save-mode."
   (interactive)
-  
+
   ;; At this point the desktop.el hook in after-init-hook was
   ;; executed, so (desktop-read) is avoided.
   (when (not (eq (emacs-pid) (desktop-owner))) ; Check that emacs did not load a desktop yet
@@ -131,7 +131,7 @@
 
 ;(show-paren-mode 1)
 (setq show-paren-style 'expression)
-(setq show-paren-delay 0) 
+(setq show-paren-delay 0)
 
 (setq dired-dwim-target t)
 (setq dired-recursive-copies (quote always))
@@ -155,13 +155,13 @@
 ;; Make whitespace-mode and whitespace-newline-mode use “¶” for end of line char and ▷ for tab.
 (setq
  whitespace-display-mappings
- '( 
+ '(
    (space-mark 32 [183] [46]) ; normal space, MIDDLE DOT, FULL STOP.
-   (space-mark 160 [164] [95]) 
-   (space-mark 2208 [2212] [95]) 
-   (space-mark 2336 [2340] [95]) 
-   (space-mark 3616 [3620] [95]) 
-   (space-mark 3872 [3876] [95]) 
+   (space-mark 160 [164] [95])
+   (space-mark 2208 [2212] [95])
+   (space-mark 2336 [2340] [95])
+   (space-mark 3616 [3620] [95])
+   (space-mark 3872 [3876] [95])
    (newline-mark 10 [182 10]) ; newlne
    (tab-mark 9 [9655 9] [92 9]) ; tab
 ))
@@ -178,7 +178,7 @@
  '(isearch ((((class color) (min-colors 88) (background light)) (:background "black" :foreground "white"))))
  '(show-paren-match ((((class color) (background light)) (:background "azure2")))))
 
- 
+
 ;;ASK TO CREATE DIRS WHEN SAVING BUFFER
 (add-hook 'before-save-hook
           (lambda ()
@@ -187,9 +187,10 @@
                 (when (and (not (file-exists-p dir))
                            (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
                   (make-directory dir t))))))
-				  
-				  
-				  
+
+
+
 ; reshow last opened buffer after restart
 (desktop-save-mode 1)
-
+(recentf-mode)
+(drag-stuff-global-mode)
