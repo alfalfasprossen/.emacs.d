@@ -15,7 +15,7 @@
 (require 'color-theme)
 ;(require 'zenburn-theme)
 (eval-after-load "color-theme"
-  '(progn 
+  '(progn
 	 (color-theme-initialize)
      (color-theme-gunmetal) ;first load the gunmetal theme as a good general basis
      (color-theme-jb-night) ;then overwrite the important stuff with my color theme
@@ -38,3 +38,4 @@
 (setq split-width-threshold 600)
 
 (column-number-mode 1)
+(setq tooltip-mode nil)
