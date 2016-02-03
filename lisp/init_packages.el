@@ -32,6 +32,7 @@
 (require-package 'highlight-symbol)
 (require-package 'icicles)
 (require-package 'jedi)
+(require-package 'js2-mode)
 (require-package 'magit)
 (require-package 'markdown-mode)
 (require-package 'neotree)

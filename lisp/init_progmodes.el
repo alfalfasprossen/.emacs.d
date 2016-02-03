@@ -49,7 +49,8 @@
                ("\\.org$" . org-mode)
                ("\\.py$" . python-mode)
 	       ("\\.h$" . c++-mode)
-	       ("\\.inl$" . c++-mode))
+	       ("\\.inl$" . c++-mode)
+	       ("\\.js$" . js2-mode))
              auto-mode-alist))
 
 ;; automatic camelCase or snake_case when typing word-word
@@ -155,9 +156,9 @@
 ;; disable ac in c-modes completely, when using company
 ;; (unless cmode-use-ac
 ;;   (defadvice auto-complete-mode (around disable-auto-complete-for-c++)
-;;     (unless (or (eq major-mode 'c++-mode) 
+;;     (unless (or (eq major-mode 'c++-mode)
 ;;     		(eq major-mode 'c-mode)
-;;     		(eq major-mode 'objc-mode)) 
+;;     		(eq major-mode 'objc-mode))
 ;;       ad-do-it))
 ;;   (ad-activate 'auto-complete-mode))
 ;;(setq ac-quick-help-delay 0.3)
@@ -169,10 +170,10 @@
 ;(company-quickhelp-mode)
 ;; (unless cmode-use-ac
 ;;   (add-hook 'c-mode-common-hook
-;; 	    (lambda () 
+;; 	    (lambda ()
 ;; 	      )))
 
-(add-hook 'c-mode-common-hook 
+(add-hook 'c-mode-common-hook
 	  (lambda ()
 	    (highlight-parentheses-mode t)
 	    (hideshowvis-enable)))
@@ -186,7 +187,7 @@
 (setq c-basic-offset 4)
 (setq c-indent-level 4)
 
-(add-hook 'c-mode-common-hook ; for c++, c and obj-c 
+(add-hook 'c-mode-common-hook ; for c++, c and obj-c
 	  (lambda ()
 	    (setq indent-tabs-mode t) ; indent with tabs, not spaces
 	    (setq tab-width 4) ; a tab is 4 spaces wide
@@ -225,7 +226,7 @@
 ;; 	       '("\\.py\\'" flymake-pycheckers-init)))
 
 ;; jedi python mode stuff
-(add-hook 'python-mode-hook 
+(add-hook 'python-mode-hook
 	  (lambda ()
 	    (jedi:setup)
 	    (highlight-indentation-mode t)
@@ -290,7 +291,7 @@
   ;; - rtags auto-complete -
   (when cmode-use-ac
     (print "C using auto complete")
-    (require 'rtags-ac)	 
+    (require 'rtags-ac)
     (require 'auto-complete-clang)
     ;(add-hook 'c-mode-common-hook
     (add-hook 'c++-mode-hook
@@ -303,7 +304,7 @@
 		;(setq ac-sources '(ac-source-rtags)) ; only rtags
 		(setq ac-sources '(ac-source-clang))
 		(rtags-ac-init))))
-  
+
   ;; - rtags company -
   (unless cmode-use-ac
     (print "C using company")
@@ -316,12 +317,12 @@
 		(local-set-key (kbd "C-M-i") 'company-complete)
 		;(setq company-backends '(company-rtags)) ; only rtags
 		(setq company-backends '(company-clang))
-		))) 
+		)))
 
 ); end only if on mac
 
 ;;; --- END cedet and intellisense setup ---
-;;; ---------------------------------------------------------------------------- 
+;;; ----------------------------------------------------------------------------
 
 
 ;; perforce mode (use p4.el from gareth-rees github)
