@@ -2,6 +2,8 @@
 
 ;; UTF-8 as default encoding
 (set-language-environment "UTF-8")
+;; use unix style line endings for every new file by default
+(setq-default buffer-file-coding-system 'utf-8-unix)
 
 ;; package management
 ;; (setq package-enable-at-startup nil)
