@@ -194,3 +194,8 @@
 (desktop-save-mode 1)
 (recentf-mode)
 (drag-stuff-global-mode)
+
+
+;; Always open a buffer in the frame i'm currently executing the open
+;; command. Do not switch to another frame if the buffer is already open!
+(setq ido-default-buffer-method 'selected-window)
