@@ -39,9 +39,9 @@
         (buffer-substring-no-properties (region-beginning) (region-end))
         (thing-at-point 'symbol)))
     (if (not (eq myword nil))
-      (progn 
+      (progn
 	(subword-forward)))
-      (progn 
+      (progn
 	(subword-forward)
 	(subword-backward))))
 
@@ -107,3 +107,7 @@
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 
 (global-set-key (kbd "C-l") 'toggle-truncate-lines)
+
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b") 'helm-mini)

@@ -25,6 +25,7 @@
 (require-package 'flycheck)
 (require-package 'git-gutter)
 (require-package 'glsl-mode)
+(require-package 'helm)
 (require-package 'helm-ls-git)
 (require-package 'hideshowvis)
 (require-package 'highlight-indentation)
