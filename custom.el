@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ac-delay 0.5)
  '(clean-buffer-list-delay-general 14)
+ '(css-indent-offset 2)
  '(ecb-options-version "2.40")
  '(ecb-source-file-regexps
    (quote
@@ -13,6 +14,7 @@
       ("^\\.\\(emacs\\|gnus\\)$")))))
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
+ '(js2-basic-offset 2)
  '(markdown-command "grip")
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(py-closing-list-dedents-bos t))

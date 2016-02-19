@@ -262,6 +262,28 @@
 ;;; ----------------------------------------------------------------------------
 
 ;;; ----------------------------------------------------------------------------
+;;; --- Javascript setup ---
+(add-hook 'js2-mode-hook
+	  (lambda ()
+	    (setq indent-tabs-mode nil)
+	    (highlight-parentheses-mode t)
+	    (hideshowvis-enable)
+	    (fci-mode t)
+	    (whitespace-mode t)
+	    (highlight-indentation-mode t)
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+	    (flycheck-mode t)))
+
+(add-hook 'css-mode-hook
+	  (lambda ()
+	    (setq indent-tabs-mode nil)
+	    (highlight-indentation-mode t)
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace)))
+;;; --- END Javascript setup ---
+;;; ----------------------------------------------------------------------------
+
+
+;;; ----------------------------------------------------------------------------
 ;;; --- CEDET AND C-MODES INTELLISENSE SETUP ---
 
 ;; cedet and ecb project management stuff
