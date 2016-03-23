@@ -281,6 +281,13 @@
 	    (setq indent-tabs-mode nil)
 	    (highlight-indentation-mode t)
 	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
+
+(add-hook 'html-mode-hook
+	  (lambda ()
+	    (setq tab-width 2)
+	    (setq indent-tabs-mode nil)
+	    (highlight-indentation-mode t)
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
 ;;; --- END Javascript setup ---
 ;;; ----------------------------------------------------------------------------
 
