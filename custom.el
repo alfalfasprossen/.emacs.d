@@ -17,7 +17,7 @@
  '(js2-basic-offset 2)
  '(markdown-command "grip")
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
- '(py-closing-list-dedents-bos t))
+ '(py-closing-list-dedents-bos nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
