@@ -238,7 +238,7 @@
 	    (define-key python-mode-map (kbd "M-<") 'py-shift-left)
 	    (fci-mode t)
 	    (whitespace-mode t)
-	    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
 	    ;;(flymake-mode)
 	    ;;(flymake-python-pyflakes-load)
 	    (flycheck-mode)
@@ -271,14 +271,16 @@
 	    (fci-mode t)
 	    (whitespace-mode t)
 	    (highlight-indentation-mode t)
-	    (add-hook 'before-save-hook 'delete-trailing-whitespace)
-	    (flycheck-mode t)))
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
+	    (flycheck-mode t)
+	    ;;(setq 'font-lock-doc-face jbcl_docstring)
+	    ))
 
 (add-hook 'css-mode-hook
 	  (lambda ()
 	    (setq indent-tabs-mode nil)
 	    (highlight-indentation-mode t)
-	    (add-hook 'before-save-hook 'delete-trailing-whitespace)))
+	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
 ;;; --- END Javascript setup ---
 ;;; ----------------------------------------------------------------------------
 
