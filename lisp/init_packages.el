@@ -26,6 +26,7 @@
 (require-package 'git-gutter)
 (require-package 'glsl-mode)
 (require-package 'helm)
+(require-package 'helm-projectile)
 (require-package 'helm-ls-git)
 (require-package 'hideshowvis)
 (require-package 'highlight-indentation)
