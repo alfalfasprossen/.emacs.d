@@ -363,4 +363,12 @@
 ;; Markdown mode
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+(custom-set-variables
+ '(livedown:autostart nil) ; automatically open preview when opening markdown files
+ '(livedown:open t)        ; automatically open the browser window
+ '(livedown:port 1337))    ; port for livedown server
+
+(add-to-list 'load-path "~/.emacs.d/lisp/emacs-livedown/")
+(require 'livedown)
+
 (global-magit-file-mode t)
