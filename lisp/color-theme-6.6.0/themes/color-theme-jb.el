@@ -143,7 +143,7 @@
      (font-lock-comment-delimiter-face ((t (:background ,jbcl_commentbg :foreground ,jbcl_comment))))
      (font-lock-comment-face ((t (:background ,jbcl_commentbg :foreground ,jbcl_comment))))
      (font-lock-constant-face ((t (:foreground ,jbcl_constant))))
-     (font-lock-doc-face ((t (:foreground ,jbcl_foreground))))
+     (font-lock-doc-face ((t (:foreground ,jbcl_docstring))))
      (font-lock-doc-string-face ((t (:background ,jbcl_docstringbg :foreground ,jbcl_docstring))))
      (font-lock-emphasized-face ((t (:foreground "firebrick"))))
      (font-lock-exit-face ((t (:foreground "blue"))))
