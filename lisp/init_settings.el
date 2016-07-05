@@ -194,6 +194,7 @@
 (desktop-save-mode 1)
 (recentf-mode)
 (drag-stuff-global-mode)
+(projectile-global-mode)
 
 
 ;; Always open a buffer in the frame i'm currently executing the open
