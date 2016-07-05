@@ -45,4 +45,5 @@
 (require-package 'smartparens)
 (require-package 'sr-speedbar)
 ;; (require-package 'tabbar)
+(require-package 'web-mode)
 ;; (require-package 'yafolding)

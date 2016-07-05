@@ -15,9 +15,16 @@
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
  '(js2-basic-offset 2)
+ '(livedown:autostart nil)
+ '(livedown:open t)
+ '(livedown:port 1337)
  '(markdown-command "grip")
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
- '(py-closing-list-dedents-bos nil))
+ '(py-closing-list-dedents-bos nil)
+ '(py-shell-name "C:/python27-x64/python")
+ '(web-mode-attr-indent-offset nil)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-markup-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

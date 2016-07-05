@@ -50,7 +50,8 @@
                ("\\.py$" . python-mode)
 	       ("\\.h$" . c++-mode)
 	       ("\\.inl$" . c++-mode)
-	       ("\\.js$" . js2-mode))
+	       ("\\.js$" . js2-mode)
+	       ("\\.html$" . web-mode))
              auto-mode-alist))
 
 ;; automatic camelCase or snake_case when typing word-word
@@ -288,6 +289,18 @@
 	    (setq indent-tabs-mode nil)
 	    (highlight-indentation-mode t)
 	    (add-hook 'before-save-hook 'delete-trailing-whitespace nil t)))
+
+(defvar web-mode-html-offset) ;; highlight indent mode issue see below hook
+(add-hook 'web-mode-hook
+	  (lambda ()
+	    (rainbow-mode t)
+	    (setq-default tab-width 2)
+	    (setq-default indent-tabs-mode nil)
+	    (add-hook 'before-save-hook
+		      'delete-trailing-whitespace nil t)))
+	    ;; (setq tab-width 2)
+	    ;; (setq indent-tabs-mode nil)
+	    ;; (highlight-indentation-mode t) ;https://github.com/antonj/Highlight-Indentation-for-Emacs/pull/27
 ;;; --- END Javascript setup ---
 ;;; ----------------------------------------------------------------------------
 
@@ -372,3 +385,16 @@
 (require 'livedown)
 
 (global-magit-file-mode t)
+
+
+
+;; ediff copy both changes to result buffer
+;; http://stackoverflow.com/questions/9656311
+(defun ediff-copy-both-to-C ()
+  (interactive)
+  (ediff-copy-diff ediff-current-difference nil 'C nil
+                   (concat
+                    (ediff-get-region-contents ediff-current-difference 'A ediff-control-buffer)
+                    (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer))))
+(defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-both-to-C))
+(add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)

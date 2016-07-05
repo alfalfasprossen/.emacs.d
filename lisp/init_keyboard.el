@@ -104,7 +104,8 @@
 (global-set-key (kbd "C-M-o")'sp-forward-sexp)
 (global-set-key (kbd "C-M-u")'sp-backward-sexp)
 
-(global-set-key (kbd "C-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-/") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "M-'") 'comment-or-uncomment-region-or-line)
 
 (global-set-key (kbd "C-l") 'toggle-truncate-lines)
 
