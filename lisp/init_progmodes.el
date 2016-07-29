@@ -8,6 +8,8 @@
 ;(require 'dtrt-indent)
 ;(dtrt-indent-mode 1)
 
+(setq-default tab-width 4)
+
 ;; smart parens, automatic paren completion etc.
 (require 'smartparens-config)
 (show-smartparens-global-mode +1)
@@ -296,6 +298,7 @@
 	    (rainbow-mode t)
 	    (setq-default tab-width 2)
 	    (setq-default indent-tabs-mode nil)
+      (highlight-indentation-mode t)
 	    (add-hook 'before-save-hook
 		      'delete-trailing-whitespace nil t)))
 	    ;; (setq tab-width 2)
@@ -398,3 +401,10 @@
                     (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer))))
 (defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-both-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
+
+
+(defun indent-with-tabs ()
+  (setq indent-tabs-mode t))
+
+(defun indent-with-spaces ()
+  (setq indent-tabs-mode nil))
