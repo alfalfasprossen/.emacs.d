@@ -30,7 +30,7 @@
 (autoload 'rib-mode "rib-mode" "RenderMan Interface Bytestream editing mode" t)
 
 ;; use other python mode
-(setq py-install-directory "~/.emacs.d/lisp/python-mode.el-6.2.0/")
+(setq py-install-directory "~/.emacs.d/lisp/python-mode/")
 (add-to-list 'load-path py-install-directory)
 (require 'python-mode)
 
