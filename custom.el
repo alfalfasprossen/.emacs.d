@@ -23,7 +23,7 @@
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(package-selected-packages
    (quote
-    (smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi icicles highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md flycheck find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+	(string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi icicles highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md flycheck find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/python27-x64/python")
  '(web-mode-attr-indent-offset nil)

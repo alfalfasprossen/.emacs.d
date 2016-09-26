@@ -114,3 +114,4 @@
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-c p h") 'helm-projectile)
 (global-set-key (kbd "C-c p g") 'helm-projectile-find-file-dwim)
+(global-set-key (kbd "M-[") 'string-inflection-all-cycle)
