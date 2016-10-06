@@ -9,9 +9,9 @@
  '(ecb-options-version "2.40")
  '(ecb-source-file-regexps
    (quote
-    ((".*"
-      ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
-      ("^\\.\\(emacs\\|gnus\\)$")))))
+	((".*"
+	  ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
+	  ("^\\.\\(emacs\\|gnus\\)$")))))
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
  '(js-indent-level 2)
