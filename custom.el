@@ -23,7 +23,7 @@
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(package-selected-packages
    (quote
-	(string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi icicles highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md flycheck find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+	(hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi icicles highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md flycheck find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/python27-x64/python")
  '(py-use-font-lock-doc-face-p t)
@@ -37,6 +37,7 @@
  ;; If there is more than one, they won't work right.
  '(completions-common-part ((t (:inherit default :foreground "red"))))
  '(diredp-ignored-file-name ((t (:foreground "#bebebe"))))
+ '(hl-line ((t (:box (:line-width 1 :color "grey75")))))
  '(isearch ((((class color) (min-colors 88) (background light)) (:background "black" :foreground "white"))))
  '(linum ((t (:inherit (shadow org-agenda-dimmed-todo-face)))))
  '(show-paren-match ((((class color) (background light)) (:background "azure2")))))

@@ -186,18 +186,26 @@
 
 ;;; ----------------------------------------------------------------------------
 ;;; --- C++ / C-MODES ---
-(setq c-default-style "linux")
 (setq c-basic-offset 4)
 (setq c-indent-level 4)
+(c-set-offset 'substatement-open 0)
+(c-set-offset 'inline-open 0)
+
+(smart-tabs-add-language-support c++ c++-mode-hook
+  ((c-indent-line . c-basic-offset)
+   (c-indent-region . c-basic-offset)))
+(smart-tabs-insinuate 'c++ 'c)
 
 (add-hook 'c-mode-common-hook ; for c++, c and obj-c
 	  (lambda ()
+		(c-set-offset 'substatement-open 0)
 	    (setq indent-tabs-mode t) ; indent with tabs, not spaces
 	    (setq tab-width 4) ; a tab is 4 spaces wide
 	    (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 	    (hideshowvis-enable)
 	    (fci-mode)
 	    (whitespace-mode)
+		(add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
 	    (setq truncate-lines t)))
 (add-hook 'csharp-mode-hook
 	  (lambda ()
