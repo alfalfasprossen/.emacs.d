@@ -217,6 +217,7 @@
 (ido-mode 1)
 (setq ido-enable-flex-matching 1)
 
+(helm-projectile-on)
 
 
 
