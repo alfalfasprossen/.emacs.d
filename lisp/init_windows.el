@@ -8,8 +8,6 @@
 (unless (server-running-p)
   (server-start))
 
-(set-default-font "Lucida Console 12")
-
 (setq explicit-shell-file-name
       "C:/Program Files/Git/bin/sh.exe")
 (setq shell-file-name explicit-shell-file-name)
