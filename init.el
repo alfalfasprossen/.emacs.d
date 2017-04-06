@@ -5,13 +5,12 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-;(load "init_windows") ; windows specific
 
 ;; make sure package installed packages are found before I use them
 ;; inside my own init files
-(setq package-enable-at-startup nil)
+;; (setq package-enable-at-startup nil)
 (load "init_elpa.el")
-(load "init_packages.el")
+;; (load "init_packages.el")
 
 ;; initialize my keyboard settings before trying something stupid
 (load "init_keyboard") ; so if something fails, i still have MY KEYBOARD SETTINGS!!!
