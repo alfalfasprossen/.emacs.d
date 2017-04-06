@@ -191,10 +191,11 @@
 (c-set-offset 'substatement-open 0)
 (c-set-offset 'inline-open 0)
 
-(smart-tabs-add-language-support c++ c++-mode-hook
-  ((c-indent-line . c-basic-offset)
-   (c-indent-region . c-basic-offset)))
-(smart-tabs-insinuate 'c++ 'c)
+;; FIXME: smart-tabs-add-language-support currently seems to be void
+;; (smart-tabs-add-language-support c++ c++-mode-hook
+;;   ((c-indent-line . c-basic-offset)
+;;    (c-indent-region . c-basic-offset)))
+;; (smart-tabs-insinuate 'c++ 'c)
 
 (add-hook 'c-mode-common-hook ; for c++, c and obj-c
 	  (lambda ()
