@@ -88,8 +88,8 @@
 ;;(global-set-key (kbd "M-w") 'subword-mark)
 (global-set-key (kbd "C-t") 'subword-transpose)
 
-;(require 'drag-stuff)
-;(drag-stuff-global-mode)
+;; (require 'drag-stuff)
+;; (drag-stuff-global-mode)
 
 (require 'expand-region)
 (global-unset-key (kbd "M-w"))

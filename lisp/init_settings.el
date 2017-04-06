@@ -194,6 +194,7 @@
 (desktop-save-mode 1)
 (recentf-mode)
 (drag-stuff-global-mode)
+(drag-stuff-define-keys)
 (projectile-global-mode)
 
 
