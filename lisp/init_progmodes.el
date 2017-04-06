@@ -393,7 +393,7 @@
  '(livedown:port 1337))    ; port for livedown server
 
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-livedown/")
-(require 'livedown)
+(require 'livedown nil "soft")
 
 (global-magit-file-mode t)
 
