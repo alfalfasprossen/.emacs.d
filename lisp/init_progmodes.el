@@ -33,6 +33,9 @@
 (setq py-install-directory "~/.emacs.d/lisp/python-mode/")
 (add-to-list 'load-path py-install-directory)
 (require 'python-mode)
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+;; (elpy-enable)
+;; (setq elpy-rpc-backend "jedi")
 
 ;; Load specific file extensions with a appropriate mode
 (setq auto-mode-alist
@@ -146,11 +149,11 @@
 (defconst cmode-use-ac nil)
 
 ;; - AUTO COMPLETE
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
+;; (require 'auto-complete)
+;; (require 'auto-complete-config)
+;; (ac-config-default)
 (require 'popup)
-(setq ac-auto-start 1)
+;; (setq ac-auto-start 1)
 
 ;(add-to-list 'ac-sources 'ac-source-yasnippet))
 ;;(global-auto-complete-mode 0) ; disable AC globally
@@ -241,6 +244,7 @@
 (add-hook 'python-mode-hook
 	  (lambda ()
 	    (jedi:setup)
+		;; (auto-complete-mode 0)
 	    (highlight-indentation-mode t)
 	    (highlight-parentheses-mode t)
 	    (hideshowvis-enable)
@@ -347,13 +351,13 @@
   ;; - rtags auto-complete -
   (when cmode-use-ac
     (print "C using auto complete")
-    (require 'rtags-ac)
-    (require 'auto-complete-clang)
+    ;; (require 'rtags-ac)
+    ;; (require 'auto-complete-clang)
     ;(add-hook 'c-mode-common-hook
     (add-hook 'c++-mode-hook
 	      (lambda ()
 		(company-mode 0)
-		(auto-complete-mode 1)
+		;; (auto-complete-mode 1)
 		;(rtags-diagnostics) ; enable interactive rtags feedback
 		;(local-set-key (kbd "C-M-i") 'ac-complete-rtags)
 		;(setq completion-at-point-functions '(ac-complete-rtags))
@@ -368,7 +372,7 @@
     (add-hook 'c-mode-common-hook
 	      (lambda ()
 		;(rtags-diagnostics) ; enable interactive rtags feedback
-		(auto-complete-mode 0)
+		;; (auto-complete-mode 0)
 		(company-mode 1)
 		(local-set-key (kbd "C-M-i") 'company-complete)
 		;(setq company-backends '(company-rtags)) ; only rtags

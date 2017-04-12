@@ -11,9 +11,9 @@
  '(ecb-options-version "2.40")
  '(ecb-source-file-regexps
    (quote
-    ((".*"
-      ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
-      ("^\\.\\(emacs\\|gnus\\)$")))))
+	((".*"
+	  ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
+	  ("^\\.\\(emacs\\|gnus\\)$")))))
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
  '(js-indent-level 2)
@@ -25,9 +25,9 @@
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(package-selected-packages
    (quote
-    (ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi icicles highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md flycheck find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+	(flycheck ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
  '(py-closing-list-dedents-bos nil)
- '(py-shell-name "C:/python27-x64/python")
+ '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
  '(tool-bar-mode nil)
  '(web-mode-attr-indent-offset nil)
