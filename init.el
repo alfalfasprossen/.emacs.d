@@ -2,15 +2,19 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;; (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;; Variables configured via the interactive 'customize' interface
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 ;; make sure package installed packages are found before I use them
 ;; inside my own init files
 ;; (setq package-enable-at-startup nil)
 (load "init_elpa.el")
-;; (load "init_packages.el")
+(load "init_packages.el")
 
 ;; initialize my keyboard settings before trying something stupid
 (load "init_keyboard") ; so if something fails, i still have MY KEYBOARD SETTINGS!!!
@@ -206,11 +210,6 @@
 ; -
 ; -
 ;;----------------------------------------------------------------------------
-
-
-;; Variables configured via the interactive 'customize' interface
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
 
 (load "init_keyboard") ; and now make sure no keys have been overriden by some packages
 (ido-mode 1)
