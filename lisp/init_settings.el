@@ -5,16 +5,6 @@
 ;; use unix style line endings for every new file by default
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
-;; package management
-;; (setq package-enable-at-startup nil)
-;; (require 'package)
-;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;; (package-initialize)
-;; (require 'melpa)
-
-
-
 ;; ----------------------------------------------------------------------------
 
 ;; For htmlize.el.
@@ -139,12 +129,7 @@
 
 (setq mouse-drag-copy-region nil)
 
-(cua-mode 1)
-(delete-selection-mode 1)
 (iswitchb-mode 1)
-
-;; Alt+y is not cua-repeat-replace-region
-(define-key cua--cua-keys-keymap [(meta v)] 'nil)
 
 ;; ----------------------------------------------------------------------------
 
