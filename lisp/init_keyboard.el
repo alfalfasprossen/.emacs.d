@@ -122,6 +122,15 @@ Else it is a user buffer."
   (find-file (cdr (pop recently-closed-buffers)) ) )
 
 
+(defun new-empty-buffer ()
+  "Opens a new empty buffer."
+  (interactive)
+  (let ((buf (generate-new-buffer "untitled")))
+    (switch-to-buffer buf)
+    (funcall (and initial-major-mode))
+    (setq buffer-offer-save t)))
+
+
 (defun reindent-whole-buffer-python ()
   "indent whole buffer"
   (interactive)
