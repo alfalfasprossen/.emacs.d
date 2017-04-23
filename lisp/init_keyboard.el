@@ -246,6 +246,7 @@ the end of it."
 (define-key my-keymap (kbd "M-4") 'split-window-vertically)
 (define-key my-keymap (kbd "M-3") 'split-window-horizontally)
 (define-key my-keymap (kbd "M-0") 'delete-window)
+(define-key my-keymap (kbd "M-1") 'delete-other-windows)
 
 (define-key my-keymap (kbd "M-~") 'switch-to-previous-frame)
 (define-key my-keymap (kbd "M-`") 'switch-to-next-frame)
