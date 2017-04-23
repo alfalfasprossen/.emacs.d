@@ -30,12 +30,12 @@
 (autoload 'rib-mode "rib-mode" "RenderMan Interface Bytestream editing mode" t)
 
 ;; use other python mode
-(setq py-install-directory "~/.emacs.d/lisp/python-mode/")
-(add-to-list 'load-path py-install-directory)
-(require 'python-mode)
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-;; (elpy-enable)
-;; (setq elpy-rpc-backend "jedi")
+;; (setq py-install-directory "~/.emacs.d/lisp/python-mode/")
+;; (add-to-list 'load-path py-install-directory)
+;; (require 'python-mode)
+;; (add-to-list 'interpreter-mode-alist '("python" . python-mode))
+(elpy-enable)
+(setq elpy-rpc-backend "jedi")
 
 ;; Load specific file extensions with a appropriate mode
 (setq auto-mode-alist

@@ -25,7 +25,7 @@
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(package-selected-packages
    (quote
-	(flycheck ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+	(which-key elpy flycheck ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode jedi highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
