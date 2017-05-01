@@ -185,6 +185,16 @@ the end of it."
 (defvar my-keymap (make-sparse-keymap)
   "My custom keymap.")
 
+;; A note about the problems for coming up with some 'more obvious'
+;; key-bindings than some.
+;;
+;; C-i is always tab
+;; C-m is always return
+;; C-h is always help, so binding C bindings to hjkl is not generally
+;;   an option.
+;; C-M- bindings should be avoided because they don't work windows on
+;;   or i will have to switch to a non-international layout.
+
 ;;; --------------------------------------------------
 ;;; CURSOR MOVEMENTS
 
@@ -217,36 +227,16 @@ the end of it."
 (define-key my-keymap (kbd "M-K") 'scroll-down)
 (define-key my-keymap (kbd "M-J") 'scroll-up)
 
-;; C-i is always tab
-;; C-m is always return
-;; C-o is currently open file which is not needed
+
 ;; M-p and C-l (default) are recenter, one of them could be reused
-;; C-h is always help, so binding C bindings to hjkl is not generally an option
 ;; C-k is kill line to end C-j could be kill line to beginning
 ;; C-j is currently open-line which is in it's default behaviour useless
 ;;   improved functions could be mapped to C-o C-S-o or M-o
-;; C-M bindings should be avoided because they don't work on windows
-;;   or i will have to switch to a non-international layout
-;; M-h and M-H were used to move to beginning-end of line
-;;   not sure if there are defaults for this. (C-e and C-a)?
-;;   When using M-h for backward char, this needs to be relocated though.
-;; M-f and M-b are defaults for forward and backward word. b is a bad char
-;;   for this, and movement is generally on the right hand, moving by word
-;;   should be located on the right, maybe u and o are ok for this.
-;; M-f is also remapped to forward delete char
-;; M-y as C-y is cua-paste. Which is already covered by M-v / C-v
-;;   where M-V is moving through the kill-ring. That is generally
-;;   tedious and often it is clear that an entry that is not the
-;;   most recent is desired. A direkt keybinding to helm-show-killring
-;;   would be nicer for these occasions. Overwriting M-v (and C-v)
-;;   is probably bad because one is so used to that behaviour.
-;;   M-V / C-V or M-y could be used for that though.
 
 
 (define-key my-keymap (kbd "M-i") 'avy-goto-char)
 (setq avy-keys '(?a ?s ?d ?f ?j ?k ?l ?h ?g ?i ?o ?p ?r ?e ?w ?u ?n ?m ?v ?c ?b))
 (setq avy-all-windows nil)
-;; If using M-i for this, M-I can still be used for a similar alternative (avy-goto-char-2) or so
 ;; TODO: There is a function avy-goto-char-in-line, which gives me closer to what I want, but not quite
 ;;   I want a function that does avy-goto-char, but starts at point and counts up outwards from it
 ;;   and not start at the top of the screen and then maybe have already j-d for switching to the next
@@ -258,6 +248,8 @@ the end of it."
 (eval-after-load "isearch"
   '(define-key isearch-mode-map (kbd "M-i") 'avy-isearch))
 ;; (define-key my-keymap (kbd "M-z") 'avy-zap-to-char-dwim)
+
+(define-key my-keymap (kbd "M-I") 'helm-swoop)
 
 ;;; --------------------------------------------------
 ;;; MAJOR EDITING COMMANDS
@@ -284,10 +276,8 @@ the end of it."
 ;;; --------------------------------------------------
 ;;; WINDOWS AND FRAMES
 
-;; (define-key my-keymap (kbd "M-s") 'move-cursor-next-pane)  ;; M-s is by default a prefix for isearch, which could be useful.
-;; (define-key my-keymap (kbd "M-S") 'move-cursor-previous-pane)  
-(define-key my-keymap (kbd "M-4") 'split-window-vertically)  ;; instead of splitting, should define a 4-window layout
-(define-key my-keymap (kbd "M-3") 'split-window-horizontally) ;; instead of splitting, should define a 3-window layout
+(define-key my-keymap (kbd "M-4") 'split-window-vertically)  ;; TODO: instead of splitting, should define a 4-window layout
+(define-key my-keymap (kbd "M-3") 'split-window-horizontally) ;; TODO: instead of splitting, should define a 3-window layout
 (define-key my-keymap (kbd "M-0") 'delete-window)
 (define-key my-keymap (kbd "M-1") 'delete-other-windows)
 
@@ -311,13 +301,12 @@ the end of it."
 ;;; OTHER COMMANDS
 
 (define-key my-keymap (kbd "M-x") 'helm-M-x)
-;; (define-key my-keymap (kbd "M-o") 'occur)
 (define-key my-keymap (kbd "C-x C-n") 'new-empty-buffer)
 
 ;; (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 (define-key my-keymap (kbd "M-m") 'highlight-symbol-at-point)
 (define-key my-keymap (kbd "M-M") 'highlight-symbol-next)
-(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)  ;; Might not work because C-m is always return
+(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)  ;; TODO: Might not work because C-m is always return
 
 (define-key my-keymap (kbd "M-w") 'er/expand-region)
 
