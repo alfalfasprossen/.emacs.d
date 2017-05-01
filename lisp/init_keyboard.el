@@ -176,6 +176,9 @@ the end of it."
     (comment-or-uncomment-region beg end)))
 
 
+;; Initialize completions by just hitting Tab instead of M-Tab
+(setq tab-always-indent 'complete)
+
 ;;; Define my custom keymap. Generally inspired by ergoemacs, but more
 ;;; limited to general cursor movement and editing, while keeping
 ;;; most of the more complex bindings at their defaults.
