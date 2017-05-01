@@ -279,18 +279,15 @@ the end of it."
 ;;; --------------------------------------------------
 ;;; STANDARD SHORTCUTS (CUA - like)
 
-(define-key my-keymap (kbd "C-o") 'helm-find-files)
-(define-key my-keymap (kbd "C-S-t") 'open-last-closed)
+(define-key my-keymap (kbd "C-T") 'open-last-closed)
 (define-key my-keymap (kbd "C-w") 'close-current-buffer)
 (define-key my-keymap (kbd "<delete>") 'delete-char)
-(define-key my-keymap (kbd "C-a") 'mark-whole-buffer)
 
 ;;; --------------------------------------------------
 ;;; OTHER COMMANDS
 
 (define-key my-keymap (kbd "M-x") 'helm-M-x)
-(define-key my-keymap (kbd "M-o") 'occur)
-(define-key my-keymap (kbd "C-x C-l") 'toggle-truncate-lines)
+;; (define-key my-keymap (kbd "M-o") 'occur)
 (define-key my-keymap (kbd "C-x C-n") 'new-empty-buffer)
 
 ;; (global-set-key (kbd "C-x C-f") 'find-file-at-point)
@@ -311,8 +308,9 @@ the end of it."
 (define-key my-keymap (kbd "C-c p h") 'helm-projectile)
 (define-key my-keymap (kbd "C-c p g") 'helm-projectile-find-file-dwim)
 
-(define-key my-keymap (kbd "C-8") 'whitespace-mode)
-(define-key my-keymap (kbd "C-9") 'sr-speedbar-toggle)
+(define-key my-keymap (kbd "C-x t l") 'toggle-truncate-lines)
+(define-key my-keymap (kbd "C-x t w") 'whitespace-mode)
+(define-key my-keymap (kbd "C-x t s") 'sr-speedbar-toggle)
 
 ;;; ------------------------------------------------------------------
 ;;; Mode for my keymap
