@@ -4,6 +4,8 @@
 ;;;
 ;;; Some functionality and basic keyboard layout taken from
 ;;; ergoemacs (http://ergoemacs.org)
+;;; Other helpful functions and inspiration from Prelude and
+;;; http://emacsredux.com
 
 
 (require 'redo "redo.elc" t) ; for redo shortcut
@@ -195,12 +197,19 @@ Position the cursor at it's beginning, according to the current mode."
   (indent-according-to-mode))
 
 
+(defun smart-kill-whole-line (&optional arg)
+  "A simple wrapper around `kill-whole-line' that respects indentation."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+
+
 ;; Initialize completions by just hitting Tab instead of M-Tab
 (setq tab-always-indent 'complete)
 
-;;; Define my custom keymap. Generally inspired by ergoemacs, but more
-;;; limited to general cursor movement and editing, while keeping
-;;; most of the more complex bindings at their defaults.
+;;; Define my custom keymap. This approach is generally safer against
+;;; unwanted key redefinitions that often happen when simply using
+;;; global-set-key, as those get overwritten by minor modes.
 (defvar my-keymap (make-sparse-keymap)
   "My custom keymap.")
 
@@ -227,16 +236,14 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap (kbd "M-u") 'backward-word)
 (define-key my-keymap (kbd "M-o") 'forward-word-to-beginning)
 
-(define-key my-keymap (kbd "C-M-j") 'backward-list)  ;; needs rethinking
-(define-key my-keymap (kbd "C-M-l") 'forward-list)  ;; needs rethinking
+;; TODO: Need hotkeys for navigating lists (parens).
+;; (define-key my-keymap (kbd "C-M-j") 'backward-list)  ;; needs rethinking
+;; (define-key my-keymap (kbd "C-M-l") 'forward-list)  ;; needs rethinking
 
 ;; Move to beginning/ending of line
 (define-key my-keymap [home] 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-H") 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-L") 'end-of-line)
-;; should be used for previous-word?
-;; then M-u and M-o could be used for other commands
-;; like navigating lists (parens) or paragraphs.
 
 ;; Move to beginning/ending of file
 (key-chord-define-global "jj" 'end-of-buffer)
@@ -244,11 +251,6 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key my-keymap (kbd "M-K") 'scroll-down)
 (define-key my-keymap (kbd "M-J") 'scroll-up)
-
-;; TODO:
-;; C-k is kill line to end C-j could be kill line to beginning
-;; C-j is currently open-line which is in it's default behaviour useless
-;;   improved functions could be mapped to C-o C-S-o or M-o
 
 (define-key my-keymap (kbd "M-i") 'avy-goto-char)
 (setq avy-keys '(?a ?s ?d ?f ?j ?k ?l ?h ?g ?i ?o ?p ?r ?e ?w ?u ?n ?m ?v ?c ?b))
@@ -294,6 +296,9 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key my-keymap (kbd "C-O") 'smart-open-line-above)
 (define-key my-keymap (kbd "C-o") 'smart-open-line)
+
+(define-key my-keymap (kbd "C-j") (lambda () (interactive) (kill-line 0)))
+(define-key my-keymap (kbd "C-K") 'smart-kill-whole-line)
 
 ;;; --------------------------------------------------
 ;;; WINDOWS AND FRAMES
