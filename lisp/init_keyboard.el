@@ -253,8 +253,9 @@ the end of it."
 ; Copy Cut Paste, Paste previous
 ;; (define-key my-keymap (kbd "M-x") 'kill-region)
 (define-key my-keymap (kbd "M-c") 'kill-ring-save)
-(define-key my-keymap (kbd "M-v") 'yank)
-(define-key my-keymap (kbd "M-V") 'yank-pop)
+(define-key my-keymap (kbd "M-v") 'cua-paste)
+(define-key my-keymap (kbd "M-V") 'helm-show-kill-ring)
+(define-key my-keymap (kbd "M-y") 'helm-show-kill-ring)
 
 ;; undo and redo
 (define-key my-keymap (kbd "C-Z") 'redo)
