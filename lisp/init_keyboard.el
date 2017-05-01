@@ -205,6 +205,9 @@ the end of it."
 (define-key my-keymap [home] 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-H") 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-L") 'end-of-line)
+;; should be used for previous-word?
+;; then M-u and M-o could be used for other commands
+;; like navigating lists (parens) or paragraphs.
 
 ;; Move to beginning/ending of file
 ;; (define-key my-keymap (kbd "M-J") 'beginning-of-buffer)  ;; no need for a convenient mapping,
@@ -239,6 +242,23 @@ the end of it."
 ;;   is probably bad because one is so used to that behaviour.
 ;;   M-V / C-V or M-y could be used for that though.
 
+
+(define-key my-keymap (kbd "M-i") 'avy-goto-char)
+(setq avy-keys '(?a ?s ?d ?f ?j ?k ?l ?h ?g ?i ?o ?p ?r ?e ?w ?u ?n ?m ?v ?c ?b))
+(setq avy-all-windows nil)
+;; If using M-i for this, M-I can still be used for a similar alternative (avy-goto-char-2) or so
+;; TODO: There is a function avy-goto-char-in-line, which gives me closer to what I want, but not quite
+;;   I want a function that does avy-goto-char, but starts at point and counts up outwards from it
+;;   and not start at the top of the screen and then maybe have already j-d for switching to the next
+;;   wanted char in the same line. (Note that isearch might still be generally faster for that,
+;;   navigating close to current point.)
+(define-key my-keymap (kbd "M-g g") 'avy-goto-line)
+(define-key my-keymap (kbd "M-g w") 'avy-goto-word-or-subword-1)
+;; Enable avy-isearch in isearch with M-i
+(eval-after-load "isearch"
+  '(define-key isearch-mode-map (kbd "M-i") 'avy-isearch))
+;; (define-key my-keymap (kbd "M-z") 'avy-zap-to-char-dwim)
+
 ;;; --------------------------------------------------
 ;;; MAJOR EDITING COMMANDS
 
@@ -264,10 +284,10 @@ the end of it."
 ;;; --------------------------------------------------
 ;;; WINDOWS AND FRAMES
 
-(define-key my-keymap (kbd "M-s") 'move-cursor-next-pane)
-(define-key my-keymap (kbd "M-S") 'move-cursor-previous-pane)
-(define-key my-keymap (kbd "M-4") 'split-window-vertically)
-(define-key my-keymap (kbd "M-3") 'split-window-horizontally)
+;; (define-key my-keymap (kbd "M-s") 'move-cursor-next-pane)  ;; M-s is by default a prefix for isearch, which could be useful.
+;; (define-key my-keymap (kbd "M-S") 'move-cursor-previous-pane)  
+(define-key my-keymap (kbd "M-4") 'split-window-vertically)  ;; instead of splitting, should define a 4-window layout
+(define-key my-keymap (kbd "M-3") 'split-window-horizontally) ;; instead of splitting, should define a 3-window layout
 (define-key my-keymap (kbd "M-0") 'delete-window)
 (define-key my-keymap (kbd "M-1") 'delete-other-windows)
 
@@ -275,6 +295,10 @@ the end of it."
 (define-key my-keymap (kbd "M-`") 'switch-to-next-frame)
 
 (define-key my-keymap (kbd "M-p") 'recenter-top-bottom)
+
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?0 ?9 ?8 ?7 ?1 ?2 ?3 ?4 ?5 ?6))
+(setq aw-dispatch-always t)
+(define-key my-keymap (kbd "M-n") 'ace-window)
 
 ;;; --------------------------------------------------
 ;;; STANDARD SHORTCUTS (CUA - like)
