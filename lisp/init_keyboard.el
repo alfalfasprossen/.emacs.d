@@ -189,29 +189,55 @@ the end of it."
 ;;; CURSOR MOVEMENTS
 
 ;; Single char cursor movement
-(define-key my-keymap (kbd "M-j") 'backward-char)
+(define-key my-keymap (kbd "M-h") 'backward-char)
 (define-key my-keymap (kbd "M-l") 'forward-char)
-(define-key my-keymap (kbd "M-i") 'previous-line)
-(define-key my-keymap (kbd "M-k") 'next-line)
+(define-key my-keymap (kbd "M-k") 'previous-line)
+(define-key my-keymap (kbd "M-j") 'next-line)
 
 ;; Move by word
 (define-key my-keymap (kbd "M-u") 'backward-word)
 (define-key my-keymap (kbd "M-o") 'forward-word-to-beginning)
 
-(define-key my-keymap (kbd "C-M-j") 'backward-list)
-(define-key my-keymap (kbd "C-M-l") 'forward-list)
+(define-key my-keymap (kbd "C-M-j") 'backward-list)  ;; needs rethinking
+(define-key my-keymap (kbd "C-M-l") 'forward-list)  ;; needs rethinking
 
 ;; Move to beginning/ending of line
 (define-key my-keymap [home] 'smart-beginning-of-line)
-(define-key my-keymap (kbd "M-h") 'smart-beginning-of-line)
-(define-key my-keymap (kbd "M-H") 'end-of-line)
+(define-key my-keymap (kbd "M-H") 'smart-beginning-of-line)
+(define-key my-keymap (kbd "M-L") 'end-of-line)
 
 ;; Move to beginning/ending of file
-(define-key my-keymap (kbd "M-J") 'beginning-of-buffer)
-(define-key my-keymap (kbd "M-L") 'end-of-buffer)
+;; (define-key my-keymap (kbd "M-J") 'beginning-of-buffer)  ;; no need for a convenient mapping,
+;; used for scroll-up instead.
+;; (define-key my-keymap (kbd "M-L") 'end-of-buffer)  ;; no need for a convenient mapping, should be next-word
 
-(define-key my-keymap (kbd "M-I") 'scroll-down)
-(define-key my-keymap (kbd "M-K") 'scroll-up)
+(define-key my-keymap (kbd "M-K") 'scroll-down)
+(define-key my-keymap (kbd "M-J") 'scroll-up)
+
+;; C-i is always tab
+;; C-m is always return
+;; C-o is currently open file which is not needed
+;; M-p and C-l (default) are recenter, one of them could be reused
+;; C-h is always help, so binding C bindings to hjkl is not generally an option
+;; C-k is kill line to end C-j could be kill line to beginning
+;; C-j is currently open-line which is in it's default behaviour useless
+;;   improved functions could be mapped to C-o C-S-o or M-o
+;; C-M bindings should be avoided because they don't work on windows
+;;   or i will have to switch to a non-international layout
+;; M-h and M-H were used to move to beginning-end of line
+;;   not sure if there are defaults for this. (C-e and C-a)?
+;;   When using M-h for backward char, this needs to be relocated though.
+;; M-f and M-b are defaults for forward and backward word. b is a bad char
+;;   for this, and movement is generally on the right hand, moving by word
+;;   should be located on the right, maybe u and o are ok for this.
+;; M-f is also remapped to forward delete char
+;; M-y as C-y is cua-paste. Which is already covered by M-v / C-v
+;;   where M-V is moving through the kill-ring. That is generally
+;;   tedious and often it is clear that an entry that is not the
+;;   most recent is desired. A direkt keybinding to helm-show-killring
+;;   would be nicer for these occasions. Overwriting M-v (and C-v)
+;;   is probably bad because one is so used to that behaviour.
+;;   M-V / C-V or M-y could be used for that though.
 
 ;;; --------------------------------------------------
 ;;; MAJOR EDITING COMMANDS
@@ -269,9 +295,8 @@ the end of it."
 ;; (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 (define-key my-keymap (kbd "M-m") 'highlight-symbol-at-point)
 (define-key my-keymap (kbd "M-M") 'highlight-symbol-next)
-(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-next)
+(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)  ;; Might not work because C-m is always return
 
-(global-unset-key (kbd "M-w"))
 (define-key my-keymap (kbd "M-w") 'er/expand-region)
 
 ;; (global-set-key (kbd "C-M-o") 'sp-forward-sexp)
