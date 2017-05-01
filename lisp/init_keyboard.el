@@ -105,13 +105,6 @@ Else it is a user buffer."
    ;; close
    (kill-buffer (current-buffer))
 
-   ;; if emacs buffer, switch to a user buffer
-   (if (string-match "^*" (buffer-name))
-       (setq isEmacsBufferAfter t)
-     (setq isEmacsBufferAfter nil))
-   (when isEmacsBufferAfter
-     (next-user-buffer)
-     )
    )
  )
 
