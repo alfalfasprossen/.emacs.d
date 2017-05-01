@@ -5,6 +5,10 @@
 ;; use unix style line endings for every new file by default
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
+;; Stop the 'error' sound when doing things like scrolling past the end
+;; of a buffer.
+(setq ring-bell-function 'ignore)
+
 ;; ----------------------------------------------------------------------------
 
 ;; For htmlize.el.
