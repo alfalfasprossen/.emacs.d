@@ -11,6 +11,7 @@
 
 ;; (cua-mode 1)
 (delete-selection-mode 1)
+(key-chord-mode 1)
 
 
 (defadvice kill-ring-save (before slick-copy activate compile)
@@ -220,19 +221,16 @@ the end of it."
 ;; like navigating lists (parens) or paragraphs.
 
 ;; Move to beginning/ending of file
-;; (define-key my-keymap (kbd "M-J") 'beginning-of-buffer)  ;; no need for a convenient mapping,
-;; used for scroll-up instead.
-;; (define-key my-keymap (kbd "M-L") 'end-of-buffer)  ;; no need for a convenient mapping, should be next-word
+(key-chord-define-global "jj" 'end-of-buffer)
+(key-chord-define-global "kk" 'beginning-of-buffer)
 
 (define-key my-keymap (kbd "M-K") 'scroll-down)
 (define-key my-keymap (kbd "M-J") 'scroll-up)
 
-
-;; M-p and C-l (default) are recenter, one of them could be reused
+;; TODO:
 ;; C-k is kill line to end C-j could be kill line to beginning
 ;; C-j is currently open-line which is in it's default behaviour useless
 ;;   improved functions could be mapped to C-o C-S-o or M-o
-
 
 (define-key my-keymap (kbd "M-i") 'avy-goto-char)
 (setq avy-keys '(?a ?s ?d ?f ?j ?k ?l ?h ?g ?i ?o ?p ?r ?e ?w ?u ?n ?m ?v ?c ?b))
@@ -248,6 +246,9 @@ the end of it."
 (eval-after-load "isearch"
   '(define-key isearch-mode-map (kbd "M-i") 'avy-isearch))
 ;; (define-key my-keymap (kbd "M-z") 'avy-zap-to-char-dwim)
+
+(key-chord-define-global "jl" 'avy-goto-line)
+(key-chord-define-global "jw" 'avy-goto-word-1)
 
 (define-key my-keymap (kbd "M-I") 'helm-swoop)
 
