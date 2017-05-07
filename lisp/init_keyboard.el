@@ -313,7 +313,8 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key my-keymap (kbd "M-p") 'recenter-top-bottom)
 
-(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l ?0 ?9 ?8 ?7 ?1 ?2 ?3 ?4 ?5 ?6))
+(setq aw-reverse-frame-list t)
+(setq aw-keys '(?a ?s ?d ?f ?g ?j ?k ?l ?0 ?9 ?8 ?7 ?1 ?2 ?3 ?4 ?5 ?6))
 (setq aw-dispatch-always t)
 (define-key my-keymap (kbd "M-n") 'ace-window)
 
