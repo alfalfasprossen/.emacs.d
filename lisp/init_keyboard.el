@@ -242,15 +242,15 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; Move to beginning/ending of line
 (define-key my-keymap [home] 'smart-beginning-of-line)
-(define-key my-keymap (kbd "M-H") 'smart-beginning-of-line)
-(define-key my-keymap (kbd "M-L") 'end-of-line)
+(define-key my-keymap (kbd "M-C-h") 'smart-beginning-of-line)
+(define-key my-keymap (kbd "M-C-l") 'end-of-line)
 
 ;; Move to beginning/ending of file
 (key-chord-define-global "jj" 'end-of-buffer)
 (key-chord-define-global "kk" 'beginning-of-buffer)
 
-(define-key my-keymap (kbd "M-K") 'scroll-down)
-(define-key my-keymap (kbd "M-J") 'scroll-up)
+(define-key my-keymap (kbd "M-C-k") 'scroll-down)
+(define-key my-keymap (kbd "M-C-j") 'scroll-up)
 
 (define-key my-keymap (kbd "M-i") 'avy-goto-char)
 (setq avy-keys '(?a ?s ?d ?f ?j ?k ?l ?h ?g ?i ?o ?p ?r ?e ?w ?u ?n ?m ?v ?c ?b))
@@ -278,10 +278,12 @@ Position the cursor at it's beginning, according to the current mode."
 ;; Delete previous/next char.
 (define-key my-keymap (kbd "M-d") 'delete-backward-char)
 (define-key my-keymap (kbd "M-f") 'delete-char)
+(define-key my-keymap (kbd "M-C-f") 'kill-word)
+(define-key my-keymap (kbd "M-C-d") 'backward-kill-word)
 
 ; Delete previous/next word.
-(define-key my-keymap (kbd "M-e") 'backward-kill-word)
-(define-key my-keymap (kbd "M-r") 'kill-word)
+;; (define-key my-keymap (kbd "M-e") 'backward-kill-word)
+;; (define-key my-keymap (kbd "M-r") 'kill-word)
 
 ; Copy Cut Paste, Paste previous
 ;; (define-key my-keymap (kbd "M-x") 'kill-region)
@@ -294,11 +296,12 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap (kbd "C-Z") 'redo)
 (define-key my-keymap (kbd "C-z") 'undo)
 
-(define-key my-keymap (kbd "C-O") 'smart-open-line-above)
 (define-key my-keymap (kbd "C-o") 'smart-open-line)
+(define-key my-keymap (kbd "C-M-o") 'smart-open-line-above)
 
 (define-key my-keymap (kbd "C-j") (lambda () (interactive) (kill-line 0)))
-(define-key my-keymap (kbd "C-K") 'smart-kill-whole-line)
+(define-key my-keymap (kbd "C-k") 'kill-line)
+(define-key my-keymap (kbd "C-S-k") 'smart-kill-whole-line)
 
 ;;; --------------------------------------------------
 ;;; WINDOWS AND FRAMES
