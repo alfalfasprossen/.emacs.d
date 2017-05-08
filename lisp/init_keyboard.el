@@ -356,6 +356,8 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap (kbd "C-x t w") 'whitespace-mode)
 (define-key my-keymap (kbd "C-x t s") 'sr-speedbar-toggle)
 
+(define-key my-keymap (kbd "M-*") 'pop-tag-mark)
+
 ;;; ------------------------------------------------------------------
 ;;; Mode for my keymap
 
