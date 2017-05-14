@@ -24,3 +24,7 @@
   (setq w32-quote-process-args ?\")
 
 (add-hook 'shell-mode-hook 'my-shell-setup)
+
+;; Don't use an image for the fci on Windows, because it increases
+;; line-height.  Probably a bug in Windows Emacs.
+(setq fci-always-use-textual-rule t)
