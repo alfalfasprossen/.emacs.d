@@ -38,4 +38,4 @@
 (setq split-width-threshold 600)
 
 (column-number-mode 1)
-(tooltip-mode nil)
+(tooltip-mode -1)
