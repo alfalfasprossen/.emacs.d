@@ -358,6 +358,8 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key my-keymap (kbd "M-*") 'pop-tag-mark)
 
+(global-set-key (kbd "M-SPC") 'fixup-whitespace)
+
 ;;; ------------------------------------------------------------------
 ;;; Mode for my keymap
 
