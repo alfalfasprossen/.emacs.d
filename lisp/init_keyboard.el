@@ -298,6 +298,7 @@ Position the cursor at it's beginning, according to the current mode."
 
 (define-key my-keymap (kbd "C-o") 'smart-open-line)
 (define-key my-keymap (kbd "C-M-o") 'smart-open-line-above)
+(define-key my-keymap (kbd "C-S-o") 'smart-open-line-above)
 
 (define-key my-keymap (kbd "C-j") (lambda () (interactive) (kill-line 0)))
 (define-key my-keymap (kbd "C-k") 'kill-line)
