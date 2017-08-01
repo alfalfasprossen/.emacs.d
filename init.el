@@ -34,6 +34,10 @@
 ;; -
 ;; -
 
+;; Reset visual fill column on text size changes
+(advice-add 'text-scale-adjust :after
+  #'visual-fill-column-adjust)
+
 ;; Fix for company popups being displaced by fci-mode
 (defvar-local company-fci-mode-on-p nil)
 

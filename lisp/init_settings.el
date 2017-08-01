@@ -190,3 +190,6 @@
 ;; Always open a buffer in the frame i'm currently executing the open
 ;; command. Do not switch to another frame if the buffer is already open!
 (setq ido-default-buffer-method 'selected-window)
+
+;; Always sort lines case-insensitive
+(setq sort-fold-case t)

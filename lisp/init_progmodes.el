@@ -156,7 +156,7 @@
 ;; (setq ac-auto-start 1)
 
 ;(add-to-list 'ac-sources 'ac-source-yasnippet))
-;;(global-auto-complete-mode 0) ; disable AC globally
+;; (global-auto-complete-mode -1) ; disable AC globally
 ;(add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/ac-dict")
 
 ;; disable ac in c-modes completely, when using company
@@ -172,8 +172,10 @@
 ;; - COMPANY (alternative to AC)
 (require 'company)
 (setq company-dabbrev-ignore-case t)
-;(require 'company-quickhelp)
-;(company-quickhelp-mode)
+;; (require 'company-quickhelp)
+;; (company-quickhelp-mode)
+(setq company-idle-delay 2.0)
+
 ;; (unless cmode-use-ac
 ;;   (add-hook 'c-mode-common-hook
 ;; 	    (lambda ()
