@@ -389,3 +389,6 @@ Position the cursor at it's beginning, according to the current mode."
   (interactive)
   (isearch-exit)
   (goto-char isearch-other-end))
+
+;; Make backspace in isearch delete chars, not cycle backwards.
+(define-key isearch-mode-map [remap isearch-delete-char] 'isearch-del-char)
