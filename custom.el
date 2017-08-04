@@ -17,6 +17,7 @@
  '(expand-region-fast-keys-enabled nil)
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
+ '(flymake-gui-warnings-enabled nil)
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(livedown:autostart nil)
