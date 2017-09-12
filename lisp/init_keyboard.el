@@ -361,6 +361,10 @@ Position the cursor at it's beginning, according to the current mode."
 
 (global-set-key (kbd "M-SPC") 'fixup-whitespace)
 
+(define-key my-keymap (kbd "C-x m a") 'mc/mark-all-like-this-dwim)
+(define-key my-keymap (kbd "C-x m n") 'mc/mark-next-like-this)
+(define-key my-keymap (kbd "C-x m p") 'mc/mark-previous-like-this)
+
 ;;; ------------------------------------------------------------------
 ;;; Mode for my keymap
 
