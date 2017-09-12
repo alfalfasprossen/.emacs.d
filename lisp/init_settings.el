@@ -31,6 +31,11 @@
 
 ;; Make lines not dissapear into the right margin while in org-mode
 ;(add-hook 'org-mode-hook 'soft-wrap-lines)
+;; Syntax-highlight code in code-blocks
+(setq org-src-fontify-natively t)
+
+;; Syntax-highlight code-blocks in markdown
+(setq markdown-fontify-code-blocks-natively t)
 
 ;; turn on save place so that when opening a file, the cursor will be at the last position.
 (require 'saveplace)

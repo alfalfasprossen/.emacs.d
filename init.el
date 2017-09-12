@@ -34,6 +34,28 @@
 ;; -
 ;; -
 
+;; Toggleable auto-export to html in org mode on save
+(defun toggle-org-html-export-on-save ()
+  (interactive)
+  (if (memq 'org-html-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'org-html-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+    (message "Enabled org html export on save for current buffer...")))
+
+;; Auto-pair commonly used enclosing markers in org-mode
+(sp-with-modes 'org-mode
+  (sp-local-pair "~" "~" :actions '(wrap))
+  (sp-local-pair "*" "*" :actions '(wrap))
+  (sp-local-pair "/" "/" :actions '(wrap)))
+
+;; Additional expansion templates for org-mode
+(eval-after-load 'org
+'(progn
+   (add-to-list 'org-structure-template-alist
+                '("py" "#+begin_src python\n?\n#+end_src" ""))))
+
 ;; Reset visual fill column on text size changes
 (advice-add 'text-scale-adjust :after
   #'visual-fill-column-adjust)
