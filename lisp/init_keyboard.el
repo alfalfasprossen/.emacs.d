@@ -289,8 +289,6 @@ Position the cursor at it's beginning, according to the current mode."
 ; Copy Cut Paste, Paste previous
 ;; (define-key my-keymap (kbd "M-x") 'kill-region)
 (define-key my-keymap (kbd "M-c") 'kill-ring-save)
-(define-key my-keymap (kbd "M-v") 'cua-paste)
-(define-key my-keymap (kbd "M-V") 'helm-show-kill-ring)
 (define-key my-keymap (kbd "M-y") 'helm-show-kill-ring)
 
 ;; undo and redo
