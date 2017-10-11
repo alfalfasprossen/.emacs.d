@@ -94,7 +94,7 @@
  (lambda ()
    (require 'send-to-max)
    (local-set-key [S-return] 'maxscript-send-line-or-region)
-   (local-set-key (kbd "C-e") 'maxscript-send-file)
+   (local-set-key (kbd "C-c C-e") 'maxscript-send-file)
    (local-set-key (kbd "C-c C-c") 'maxscript-send-buffer)
    (local-set-key (kbd "C-c C-d") 'maxscript-clear-output)
    (fci-mode)
@@ -108,7 +108,7 @@
  (lambda ()
    (require 'send-to-max)
    (local-set-key [S-return] 'maxscript-send-line-or-region-py)
-   (local-set-key (kbd "C-e") 'maxscript-send-file)))
+   (local-set-key (kbd "C-c C-e") 'maxscript-send-file)))
 
 
 
