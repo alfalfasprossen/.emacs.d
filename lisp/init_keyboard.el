@@ -244,6 +244,7 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap [home] 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-C-h") 'smart-beginning-of-line)
 (define-key my-keymap (kbd "M-C-l") 'end-of-line)
+(define-key my-keymap (kbd "C-a") 'smart-beginning-of-line)
 
 ;; Move to beginning/ending of file
 (key-chord-define-global "jj" 'end-of-buffer)
