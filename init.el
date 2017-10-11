@@ -212,6 +212,7 @@
 
 (helm-projectile-on)
 
+(which-key-mode)
 
 
 ;; disable git as it slows down emacs extremely
