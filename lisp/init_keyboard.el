@@ -16,14 +16,18 @@
 (key-chord-mode 1)
 
 
-(defadvice kill-ring-save (before slick-copy activate compile)
+(defun copy-region-or-line-keep-highlight (orig-fun &rest args)
   "When called interactively with no active region, copy the current line."
-  (interactive
-   (if mark-active
-       (list (region-beginning) (region-end))
-     (progn
-       (message "Current line is copied.")
-       (list (line-beginning-position) (line-beginning-position 2)) ) ) ))
+  (print args)
+  (if mark-active
+	  (progn
+		(apply orig-fun args)
+		(setq deactivate-mark nil))
+	(progn
+	  (message "Current line is copied.")
+	  (funcall orig-fun (line-beginning-position) (line-beginning-position 2)))))
+
+(advice-add 'kill-ring-save :around #'copy-region-or-line-keep-highlight)
 
 
 (defadvice kill-region (before slick-copy activate compile)
