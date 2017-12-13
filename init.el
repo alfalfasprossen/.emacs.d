@@ -217,3 +217,15 @@
 
 ;; disable git as it slows down emacs extremely
 (setq vc-handled-backends ())
+
+;; configure spell checking
+(setenv "LANG" "en_GB")
+(setq-default ispell-program-name "c:/tools/hunspell/bin/hunspell.exe")
+ (with-eval-after-load "ispell"
+    (setq ispell-really-hunspell t)
+    (setq ispell-program-name "hunspell")
+    (setq ispell-dictionary "en_GB")
+    ;; ispell-set-spellchecker-params has to be called
+    ;; before ispell-hunspell-add-multi-dic will work
+    (ispell-set-spellchecker-params)
+    (ispell-hunspell-add-multi-dic "en_GB"))
