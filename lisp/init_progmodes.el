@@ -80,7 +80,10 @@
 (add-hook 'nxml-mode-hook
 	  (lambda ()
 	    (hs-minor-mode)
-	    (hideshowvis-enable)))
+	    (hideshowvis-enable)
+		(show-smartparens-mode nil)
+		(smartparens-mode nil)
+		(turn-off-show-smartparens-mode)))
 
 
 ;;; ----------------------------------------------------------------------------
