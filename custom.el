@@ -30,6 +30,7 @@
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
+ '(rng-nxml-auto-validate-flag nil)
  '(tool-bar-mode nil)
  '(web-mode-attr-indent-offset nil)
  '(web-mode-code-indent-offset 2)
