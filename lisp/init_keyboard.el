@@ -318,8 +318,6 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap (kbd "M-~") 'switch-to-previous-frame)
 (define-key my-keymap (kbd "M-`") 'switch-to-next-frame)
 
-(define-key my-keymap (kbd "M-p") 'recenter-top-bottom)
-
 (setq aw-reverse-frame-list t)
 (setq aw-keys '(?a ?s ?d ?f ?g ?j ?k ?l ?0 ?9 ?8 ?7 ?1 ?2 ?3 ?4 ?5 ?6))
 (setq aw-dispatch-always t)
@@ -341,7 +339,7 @@ Position the cursor at it's beginning, according to the current mode."
 ;; (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 (define-key my-keymap (kbd "M-m") 'highlight-symbol-at-point)
 (define-key my-keymap (kbd "M-M") 'highlight-symbol-next)
-(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)  ;; TODO: Might not work because C-m is always return
+(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)
 
 (define-key my-keymap (kbd "M-w") 'er/expand-region)
 
