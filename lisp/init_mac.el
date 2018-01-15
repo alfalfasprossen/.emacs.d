@@ -4,6 +4,7 @@
 
 (setq mac-option-modifier 'none) ;make sure alt is used for isocode
 (setq mac-command-modifier 'meta)
+(setq ns-right-command-modifier 'control) ;; make right command act as control
 (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
 (global-set-key (kbd "M-`") 'ns-next-frame)
 ;;(global-set-key (kbd "M-h") 'ns-do-hide-emacs)
