@@ -10,9 +10,9 @@
  '(ecb-options-version "2.40")
  '(ecb-source-file-regexps
    (quote
-	((".*"
-	  ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
-	  ("^\\.\\(emacs\\|gnus\\)$")))))
+    ((".*"
+      ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|lib\\|dll\\|a\\|so\\|cache\\|pyc\\)$\\)\\)")
+      ("^\\.\\(emacs\\|gnus\\)$")))))
  '(expand-region-fast-keys-enabled nil)
  '(flycheck-disabled-checkers (quote (javascript-jshint javascript-jscs)))
  '(flycheck-idle-change-delay 1)
@@ -26,7 +26,7 @@
  '(org-agenda-files (quote ("~/Documents/dev/m2u/m2uInfo.org")))
  '(package-selected-packages
    (quote
-	(org ox-gfm htmlize leuven-theme multiple-cursors dockerfile-mode visual-fill-column yaml-mode company-quickhelp company-jedi key-chord helm-swoop ace-window ace-jump-buffer ace-jump-helm-line avy which-key elpy flycheck ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+    (vagrant flyspell-correct-helm org ox-gfm htmlize leuven-theme multiple-cursors dockerfile-mode visual-fill-column yaml-mode company-quickhelp company-jedi key-chord helm-swoop ace-window ace-jump-buffer ace-jump-helm-line avy which-key elpy flycheck ansible image+ plantuml-mode hl-spotlight modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode highlight-symbol highlight-parentheses highlight-indentation hideshowvis helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
@@ -55,4 +55,5 @@
  '(hl-line ((t (:box (:line-width 1 :color "grey75")))))
  '(isearch ((((class color) (min-colors 88) (background light)) (:background "black" :foreground "white"))))
  '(linum ((t (:inherit (shadow org-agenda-dimmed-todo-face)))))
- '(show-paren-match ((((class color) (background light)) (:background "azure2")))))
+ '(show-paren-match ((((class color) (background light)) (:background "azure2"))))
+ '(whitespace-trailing ((t (:background "RosyBrown4" :foreground "yellow" :weight bold)))))
