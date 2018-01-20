@@ -198,3 +198,6 @@
 
 ;; Always sort lines case-insensitive
 (setq sort-fold-case t)
+
+;; Stop plain 'w' from expanding the region and the like.
+(setq-default expand-region-fast-keys-enabled nil)
