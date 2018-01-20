@@ -229,3 +229,9 @@
     ;; before ispell-hunspell-add-multi-dic will work
     (ispell-set-spellchecker-params)
     (ispell-hunspell-add-multi-dic "en_GB"))
+
+;; Set the current frame to be transparent. This includes text, but is
+;; the simplest solution to achieve a transparent emacs at all.
+(defun make-frame-transparent ()
+  (interactive)
+  (set-frame-parameter (selected-frame) 'alpha '(85 85)))
