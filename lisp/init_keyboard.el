@@ -275,7 +275,7 @@ Position the cursor at it's beginning, according to the current mode."
 (key-chord-define-global "jl" 'avy-goto-line)
 (key-chord-define-global "jw" 'avy-goto-word-1)
 
-(define-key my-keymap (kbd "M-I") 'helm-swoop)
+(define-key my-keymap (kbd "M-S-i") 'helm-swoop)
 
 ;;; --------------------------------------------------
 ;;; MAJOR EDITING COMMANDS
@@ -326,7 +326,7 @@ Position the cursor at it's beginning, according to the current mode."
 ;;; --------------------------------------------------
 ;;; STANDARD SHORTCUTS (CUA - like)
 
-(define-key my-keymap (kbd "C-T") 'open-last-closed)
+(define-key my-keymap (kbd "C-S-t") 'open-last-closed)
 (define-key my-keymap (kbd "C-w") 'close-current-buffer)
 (define-key my-keymap (kbd "<delete>") 'delete-char)
 
@@ -338,8 +338,8 @@ Position the cursor at it's beginning, according to the current mode."
 
 ;; (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 (define-key my-keymap (kbd "M-m") 'highlight-symbol-at-point)
-(define-key my-keymap (kbd "M-M") 'highlight-symbol-next)
-(define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)
+(define-key my-keymap (kbd "M-S-m") 'highlight-symbol-next)
+(define-key my-keymap (kbd "M-C-S-m") 'highlight-symbol-prev)
 
 (define-key my-keymap (kbd "M-w") 'er/expand-region)
 
@@ -365,6 +365,7 @@ Position the cursor at it's beginning, according to the current mode."
 (define-key my-keymap (kbd "C-x m a") 'mc/mark-all-like-this-dwim)
 (define-key my-keymap (kbd "C-x m n") 'mc/mark-next-like-this)
 (define-key my-keymap (kbd "C-x m p") 'mc/mark-previous-like-this)
+(define-key my-keymap (kbd "C-x m l") 'mc/mark-next-lines)
 
 ;;; ------------------------------------------------------------------
 ;;; Mode for my keymap
