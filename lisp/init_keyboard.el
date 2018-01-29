@@ -323,7 +323,7 @@ Position the cursor at it's beginning, according to the current mode."
 ;;; STANDARD SHORTCUTS (CUA - like)
 
 (define-key my-keymap (kbd "C-T") 'open-last-closed)
-(define-key my-keymap (kbd "C-w") 'close-current-buffer)
+(define-key my-keymap (kbd "C-x k") 'close-current-buffer)
 (define-key my-keymap (kbd "<delete>") 'delete-char)
 
 ;;; --------------------------------------------------
