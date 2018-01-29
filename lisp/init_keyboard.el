@@ -283,12 +283,6 @@ Position the cursor at it's beginning, according to the current mode."
 ;; Delete previous/next char.
 (define-key my-keymap (kbd "M-d") 'delete-backward-char)
 (define-key my-keymap (kbd "M-f") 'delete-char)
-(define-key my-keymap (kbd "M-C-f") 'kill-word)
-(define-key my-keymap (kbd "M-C-d") 'backward-kill-word)
-
-; Delete previous/next word.
-;; (define-key my-keymap (kbd "M-e") 'backward-kill-word)
-;; (define-key my-keymap (kbd "M-r") 'kill-word)
 
 ; Copy Cut Paste, Paste previous
 ;; (define-key my-keymap (kbd "M-x") 'kill-region)
