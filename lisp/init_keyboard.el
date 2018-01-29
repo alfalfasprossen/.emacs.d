@@ -315,7 +315,9 @@ Position the cursor at it's beginning, according to the current mode."
 (setq aw-reverse-frame-list t)
 (setq aw-keys '(?a ?s ?d ?f ?g ?j ?k ?l ?0 ?9 ?8 ?7 ?1 ?2 ?3 ?4 ?5 ?6))
 (setq aw-dispatch-always t)
-(define-key my-keymap (kbd "M-n") 'ace-window)
+(define-key my-keymap (kbd "C-x o") 'ace-window)
+(define-key my-keymap (kbd "C-`") 'move-cursor-next-pane)
+(define-key my-keymap (kbd "C-~") 'move-cursor-previous-pane)
 
 ;;; --------------------------------------------------
 ;;; STANDARD SHORTCUTS (CUA - like)
