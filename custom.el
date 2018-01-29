@@ -18,6 +18,7 @@
  '(flycheck-idle-change-delay 1)
  '(flymake-gui-warnings-enabled nil)
  '(js-expr-indent-offset -2)
+ '(help-window-select t)
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-strict-trailing-comma-warning nil)
