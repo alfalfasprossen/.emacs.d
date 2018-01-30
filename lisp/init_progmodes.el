@@ -293,6 +293,15 @@
 	    ;;(setq 'font-lock-doc-face jbcl_docstring)
 	    ))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+			(setq indent-tabs-mode nil)
+			(highlight-parentheses-mode t)
+			(whitespace-mode t)
+			(add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 4)))
+
 (add-hook 'css-mode-hook
 	  (lambda ()
 	    (setq indent-tabs-mode nil)
