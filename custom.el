@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ac-delay 0.5)
  '(clean-buffer-list-delay-general 14)
+ '(colon-double-space nil)
  '(column-number-mode t)
  '(css-indent-offset 2)
  '(ecb-options-version "2.40")
@@ -34,6 +35,7 @@
  '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
  '(rng-nxml-auto-validate-flag nil)
+ '(sentence-end-double-space nil)
  '(tool-bar-mode nil)
  '(web-mode-attr-indent-offset nil)
  '(web-mode-code-indent-offset 2)
