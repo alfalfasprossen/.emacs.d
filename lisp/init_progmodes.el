@@ -65,7 +65,7 @@
 (require 'highlight-indentation) ;; indentation highlight
 
 ;;; --- nxml mode outline folding ---
-(require 'hideshow)
+;; (require 'hideshow)
 (require 'sgml-mode)
 (require 'nxml-mode)
 
@@ -186,8 +186,7 @@
 
 (add-hook 'c-mode-common-hook
 	  (lambda ()
-	    (highlight-parentheses-mode t)
-	    (hideshowvis-enable)))
+	    (highlight-parentheses-mode t)))
 
 ;;; --- END ac and company setup
 ;;; ----------------------------------------------------------------------------
@@ -207,7 +206,7 @@
 	    (setq indent-tabs-mode t) ; indent with tabs, not spaces
 	    (setq tab-width 4) ; a tab is 4 spaces wide
 	    (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
-	    (hideshowvis-enable)
+	    ;; (hideshowvis-enable)
 	    (fci-mode)
 	    (whitespace-mode)
 		(add-hook 'before-save-hook 'delete-trailing-whitespace nil t)
@@ -248,7 +247,7 @@
 		;; (auto-complete-mode 0)
 	    (highlight-indentation-mode t)
 	    (highlight-parentheses-mode t)
-	    (hideshowvis-enable)
+	    ;; (hideshowvis-enable)
 	    (define-key python-mode-map (kbd "M->") 'python-indent-shift-right)
 	    (define-key python-mode-map (kbd "M-<") 'python-indent-shift-left)
 	    ;; (define-key python-mode-map (kbd "M->") 'py-shift-right)
@@ -284,7 +283,7 @@
 	  (lambda ()
 	    (setq indent-tabs-mode nil)
 	    (highlight-parentheses-mode t)
-	    (hideshowvis-enable)
+	    ;; (hideshowvis-enable)
 	    (fci-mode t)
 	    (whitespace-mode t)
 	    (highlight-indentation-mode t)
