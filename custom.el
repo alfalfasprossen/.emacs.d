@@ -31,6 +31,7 @@
  '(package-selected-packages
    (quote
     (pipenv json-mode uuidgen vagrant flyspell-correct-helm org ox-gfm htmlize leuven-theme multiple-cursors dockerfile-mode visual-fill-column yaml-mode company-quickhelp company-jedi key-chord helm-swoop ace-window ace-jump-buffer ace-jump-helm-line avy which-key elpy flycheck ansible image+ plantuml-mode modern-cpp-font-lock helm-ag string-inflection smart-tabs-mode yasnippet web-mode sr-speedbar smartparens rainbow-mode org-jira neotree moz markdown-mode magit js2-mode highlight-symbol highlight-parentheses highlight-indentation helm-projectile helm-ls-git glsl-mode git-gutter gh-md find-file-in-repository fill-column-indicator expand-region ecb dtrt-indent drag-stuff diff-hl csharp-mode company-web color-theme bash-completion auto-highlight-symbol auctex angular-snippets ag)))
+ '(projectile-globally-ignored-file-suffixes (quote ("pyc")))
  '(py-closing-list-dedents-bos nil)
  '(py-shell-name "C:/Python27/python")
  '(py-use-font-lock-doc-face-p t)
