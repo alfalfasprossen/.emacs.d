@@ -1,2 +1,13 @@
 elpa/*
 .python-environments/*
+
+# Auto-generated index files and such.
+.emacs.desktop*
+eshell/*
+history
+projectile-bookmarks.eld
+projectile.cache
+recentf
+
+# Tangled settings file.
+settings.el
