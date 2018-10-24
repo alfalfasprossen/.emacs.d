@@ -58,6 +58,7 @@ benefit in doing it that way?
         company-web
         csharp-mode
         diff-hl
+        dired-subtree
         dockerfile-mode
         drag-stuff
         dtrt-indent
