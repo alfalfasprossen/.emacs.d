@@ -206,7 +206,7 @@ be available in the lisp folder as a git repo or submodule.
 Only works on Windows anyway.
 
 #+BEGIN_SRC emacs-lisp
-(when (eq system-type 'win32)
+(when (eq system-type 'windows-nt)
   (add-to-list 'load-path "~/.emacs.d/lisp/maxscript-mode/")
   (autoload 'maxscript-mode "maxscript-mode" "maxscript-mode" t)
   (setq auto-mode-alist (append '(("\.ms$" . maxscript-mode)) auto-mode-alist))
@@ -1034,7 +1034,7 @@ Make backspace in isearch delete chars, not cycle backwards.
 ;; configure spell checking
 (setenv "LANG" "en_GB")
 
-(when (eq system-type 'win32)
+(when (eq system-type 'windows-nt)
   (setq-default ispell-program-name "c:/tools/hunspell/bin/hunspell.exe"))
 
 (with-eval-after-load "ispell"
@@ -1236,7 +1236,7 @@ Suppress ".emacs.d/server is unsafe" error.
 
 #+BEGIN_SRC emacs-lisp
 (require 'server)
-(when (eq system-type 'win32)
+(when (eq system-type 'windows-nt)
   (defun server-ensure-safe-dir (dir) "Noop" t) 
 )
 (unless (server-running-p)
@@ -1246,7 +1246,7 @@ Suppress ".emacs.d/server is unsafe" error.
 Use the git-bash for shell mode.
 
 #+BEGIN_SRC emacs-lisp
-(when (eq system-type 'win32)
+(when (eq system-type 'windows-nt)
   (progn 
     (setq explicit-shell-file-name
           "C:/Program Files/Git/bin/sh.exe")
@@ -1261,7 +1261,7 @@ Don't use an image for the fci on Windows, because it increases
 line-height. Probably a bug in Windows Emacs.
 
 #+BEGIN_SRC emacs-lisp
-(when (eq system-type 'win32)
+(when (eq system-type 'windows-nt)
   (setq fci-always-use-textual-rule t)
 )
 #+END_SRC
