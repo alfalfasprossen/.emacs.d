@@ -448,6 +448,7 @@ Maya MEL and Python integration
 
 #+BEGIN_SRC emacs-lisp
 (global-magit-file-mode t)
+(setq-default magit-log-margin (quote (t "%Y-%m-%d %H:%M " magit-log-margin-width t 18)))
 
 #+END_SRC
 
