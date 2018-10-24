@@ -846,18 +846,11 @@ key-bindings than some.
 ** Major Editing Commands
 
 #+BEGIN_SRC emacs-lisp
-;; Delete previous/next char.
-(define-key my-keymap (kbd "M-d") 'delete-backward-char)
-(define-key my-keymap (kbd "M-f") 'delete-char)
 
 ; Copy Cut Paste, Paste previous
 ;; (define-key my-keymap (kbd "M-x") 'kill-region)
 (define-key my-keymap (kbd "M-c") 'kill-ring-save)
 (define-key my-keymap (kbd "M-y") 'helm-show-kill-ring)
-
-;; undo and redo
-(define-key my-keymap (kbd "C-Z") 'redo)
-(define-key my-keymap (kbd "C-z") 'undo)
 
 (define-key my-keymap (kbd "C-o") 'smart-open-line)
 (define-key my-keymap (kbd "C-M-o") 'smart-open-line-above)
@@ -920,6 +913,7 @@ key-bindings than some.
 (define-key my-keymap (kbd "C-x C-f") 'helm-find-files)
 (define-key my-keymap (kbd "C-x b") 'helm-mini)
 (define-key my-keymap (kbd "C-c p h") 'helm-projectile)
+(define-key my-keymap (kbd "C-c p p") 'helm-projectile-switch-project)
 (define-key my-keymap (kbd "C-c p g") 'helm-projectile-find-file-dwim)
 
 (define-key my-keymap (kbd "C-x t l") 'toggle-truncate-lines)
@@ -1109,6 +1103,7 @@ Make backspace in isearch delete chars, not cycle backwards.
 (drag-stuff-global-mode)
 (drag-stuff-define-keys)
 (projectile-global-mode)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (setq projectile-globally-ignored-file-suffixes (quote ("pyc")))
 (setq projectile-indexing-method (quote alien))
