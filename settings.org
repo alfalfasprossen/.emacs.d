@@ -854,8 +854,6 @@ key-bindings than some.
 #+BEGIN_SRC emacs-lisp
 
 ; Copy Cut Paste, Paste previous
-;; (define-key my-keymap (kbd "M-x") 'kill-region)
-(define-key my-keymap (kbd "M-c") 'kill-ring-save)
 (define-key my-keymap (kbd "M-y") 'helm-show-kill-ring)
 
 (define-key my-keymap (kbd "C-o") 'smart-open-line)
@@ -908,7 +906,7 @@ key-bindings than some.
 (define-key my-keymap (kbd "M-M") 'highlight-symbol-next)
 (define-key my-keymap (kbd "M-C-M") 'highlight-symbol-prev)
 
-(define-key my-keymap (kbd "M-w") 'er/expand-region)
+(define-key my-keymap (kbd "C-v") 'er/expand-region)
 
 ;; (global-set-key (kbd "C-M-o") 'sp-forward-sexp)
 ;; (global-set-key (kbd "C-M-u") 'sp-backward-sexp)
