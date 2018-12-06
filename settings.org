@@ -103,6 +103,7 @@ benefit in doing it that way?
         spacemacs-theme
         sr-speedbar
         string-inflection
+        tide
         uuidgen
         vagrant
         visual-fill-column
@@ -236,6 +237,11 @@ Only works on Windows anyway.
 #+END_SRC
 
 ** JavaScript And Related Web-Dev Modes
+
+#+begin_src emacs-lisp
+(require 'tide)
+(add-to-list 'auto-mode-alist '("\.ts$'" . tide-mode))
+#+end_src
 
 #+BEGIN_SRC emacs-lisp
 ;; Don't indent continung expressions like dot-chaining.
