@@ -864,6 +864,8 @@ key-bindings than some.
 (define-key my-keymap (kbd "C-k") 'kill-line)
 (define-key my-keymap (kbd "C-S-k") 'smart-kill-whole-line)
 
+(define-key my-keymap (kbd "C-z") 'zap-up-to-char)
+
 #+END_SRC
 
 ** Windows And Frames
