@@ -921,6 +921,7 @@ key-bindings than some.
 (define-key my-keymap (kbd "C-c p h") 'helm-projectile)
 (define-key my-keymap (kbd "C-c p p") 'helm-projectile-switch-project)
 (define-key my-keymap (kbd "C-c p g") 'helm-projectile-find-file-dwim)
+(define-key my-keymap (kbd "C-c p s h") 'helm-multi-swoop-projectile)
 
 (define-key my-keymap (kbd "C-x t l") 'toggle-truncate-lines)
 (define-key my-keymap (kbd "C-x t w") 'whitespace-mode)
